@@ -43,8 +43,8 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            <img src={Logo} alt="" className="w-8 translate-x-2" />
+          <a className="btn btn-ghost text-sm font-custom">
+            <img src={Logo} alt="" className="w-7 translate-x-2 pb-1" />
             Celluloid
           </a>
         </div>

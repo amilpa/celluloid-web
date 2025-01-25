@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-custom {
+  font-family: "Playwrite IN", sans-serif;
+}

@@ -1,8 +1,9 @@
 import React from "react";
+import Delete from "./SvgComp/Delete";
 
 export default function Card() {
   return (
-    <div className="card card-side bg-base-100 shadow-xl items-center w-[480px] h-[200px] cursor-pointer">
+    <div className="card card-side bg-neutral group shadow-xl items-center w-[480px] h-[200px] cursor-pointer border border-transparent hover:border-primary transition-all">
       <figure>
         <img
           src="https://m.media-amazon.com/images/M/MV5BZjZhY2E0ZTQtMzYzYy00N2MxLTk5NWEtYjFhOWU3MzU4MzkyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
@@ -16,7 +17,14 @@ export default function Card() {
           scared.
         </p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Open</button>
+          <button className="btn btn-primary opacity-0 group-hover:opacity-100">
+            Open
+          </button>
+          <button className="btn px-1 btn-error opacity-0 group-hover:opacity-100">
+            <div className="scale-50">
+              <Delete />
+            </div>
+          </button>
         </div>
       </div>
     </div>
