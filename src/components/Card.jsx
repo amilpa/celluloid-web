@@ -20,7 +20,7 @@ export default function Card() {
           <button className="btn btn-primary opacity-0 group-hover:opacity-100">
             Open
           </button>
-          <button className="btn px-1 btn-error opacity-0 group-hover:opacity-100">
+          <button className="btn px-2 btn-error opacity-0 group-hover:opacity-100">
             <div className="scale-50">
               <Delete />
             </div>
