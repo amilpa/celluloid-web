@@ -7,7 +7,10 @@ export default function Home() {
 
   return (
     <div className="hero bg-base-100 min-h-screen  max-h-screen overflow-hidden absolute top-0 -z-10">
-      <div className="bg-primary pointer-events-none absolute top-20 start-20 aspect-square w-96 rounded-full opacity-20 blur-3xl [transform:translate3d(0,0,0)]"></div>
+      <div
+        className="bg-primary pointer-events-none absolute start-20 aspect-square w-96 rounded-full opacity-20 blur-3xl [transform:translate3d(0,0,0)]"
+        style={{ top: "-10%", left: "-10%" }}
+      ></div>
       <div
         className="bg-success pointer-events-none absolute top-[48%] start-20 aspect-square w-full rounded-full opacity-10 blur-3xl [transform:translate3d(0,0,0)]"
         style={{ left: "50%" }}
