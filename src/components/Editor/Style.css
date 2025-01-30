@@ -1,0 +1,8 @@
+.w-md-editor .w-md-editor-toolbar {
+  background-color: hsl(212, 18%, 12%);
+}
+
+.w-md-editor .w-md-editor-preview .wmde-markdown {
+  background-color: #2a323c;
+  list-style-type: disc;
+}
