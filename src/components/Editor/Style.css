@@ -2,6 +2,12 @@
   background-color: hsl(212, 18%, 12%);
 }
 
+.w-md-editor .w-md-editor-content .w-md-editor-area {
+  border-right: 3px solid hsl(212, 18%, 12%);
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 .w-md-editor .w-md-editor-preview .wmde-markdown {
   background-color: #2a323c;
   list-style-type: disc;
