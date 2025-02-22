@@ -10,6 +10,7 @@ export default function ({ save, setNext }) {
     if (abstract.length < 10) {
       alert("Abstract should be at least 50 characters long");
     } else {
+      // api call here to get logline here
       setNext(true);
     }
   }
