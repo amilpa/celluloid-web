@@ -5,6 +5,7 @@ import Sparkle from "../SvgComp/Sparkle";
 export default function ({ saveAbstract, setNext}) {
   const [abstract, setAbstract] = React.useState("");
   const [logline, setLogline] = React.useState("");
+  const [centralmsg,setCentralMsg] = React.useState("")
 
   function validate() {
     const abstract = localStorage.getItem("abstract");
@@ -58,10 +59,6 @@ export default function ({ saveAbstract, setNext}) {
               Abstract
             </h1>
             <TextArea
-              onChange={(e) => {
-                saveAbstract(e)
-                setAbstract(e.target.value);
-              }}
               rows={5}
               cols={60}
               placeholder={"Enter abstract..."}
@@ -73,12 +70,6 @@ export default function ({ saveAbstract, setNext}) {
               LogLine
             </h1>
             <TextArea
-              onChange={(e) => {
-                setLogline(e.target.value);
-                localStorage.setItem("logline", e.target.value);
-                //Hmmm the above line doesn't make sense...shouldn't we just call localStorage when validate is called...
-                // same goes for the abstract TextArea- Joel
-              }}
               rows={2}
               cols={60}
               placeholder={"Enter logline..."}
@@ -86,10 +77,27 @@ export default function ({ saveAbstract, setNext}) {
               classNames={"pb-4"}
             />
           </div>
-          <button 
-            className="btn btn-primary w-full btn-md relative mt-4"
-            onClick={validate}
-          >
+
+          {/* i decided to remove the disabled attribute and instead removed the onchange attribute for abstract and logline */}
+          {/* since disabling them results in greying out the box entirely...or you gotta make changes in that */}
+
+          <div className="mt-6">
+            <h1 className="text-base-content opacity-70 text-sm font-medium text-left mb-2 ml-2">
+              Abstract
+            </h1>
+            <TextArea
+              onChange={(e) => {
+                setCentralMsg(e.target.value)
+                localStorage.setItem("central-message",e.target.value)
+              }}
+              rows={3}
+              cols={60}
+              placeholder={"Enter Central Message..."}
+              value={centralmsg}
+            />
+          </div>
+
+          <button className="btn btn-primary w-full btn-md relative mt-4">
             <span className="pr-2">Continue to generate</span>
             <div className="absolute top-3 right-[162px] w-5">
               <Sparkle />

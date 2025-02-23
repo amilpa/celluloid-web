@@ -5,6 +5,7 @@ export default function TextArea({
   onChange,
   value,
   classNames,
+  disabled
 }) {
   return (
     <textarea
@@ -15,6 +16,7 @@ export default function TextArea({
       style={{ resize: "none" }}
       onChange={onChange}
       value={value}
+      disabled={disabled}
     ></textarea>
   );
 }

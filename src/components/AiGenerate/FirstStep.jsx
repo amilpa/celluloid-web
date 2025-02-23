@@ -1,25 +1,48 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect} from "react";
 import TextArea from "../TextArea";
 import Sparkle from "../SvgComp/Sparkle";
 
-export default function ({ save, setNext }) {
+export default function ({ saveAbstract,saveGenre, setNext }) {
   const [abstract, setAbstract] = React.useState("");
+  const [genre,setGenre] = React.useState("");
 
   function validate() {
     const abstract = localStorage.getItem("abstract");
+    const genre=localStorage.getItem("genre");
+
     if (abstract.length < 10) {
       alert("Abstract should be at least 50 characters long");
-    } else {
+    }
+
+    //i think Genre is optional here but we can pass Genre to the API call
+
+    else {
       // api call here to get logline here
-      setNext(true);
+      //need to get the API Link from KGK here 
+
+      /*
+      
+      const res=await axios.post("URL LINK");
+      localStorage.setItem("logline",res.data.logline)
+
+      */
+
+      setNext(2);
     }
   }
 
   useEffect(() => {
     const abstract = localStorage.getItem("abstract");
+    const genre=localStorage.getItem("genre");
+
     if (abstract) {
       setAbstract(abstract);
     }
+
+    if(genre){
+      setGenre(genre);
+    }
+
   }, []);
 
   return (
@@ -40,7 +63,7 @@ export default function ({ save, setNext }) {
         className="bg-primary pointer-events-none start-20 absolute top-3/4 aspect-square w-[1000px] rounded-full opacity-20 blur-3xl -translate-x-1/2"
         style={{ left: "50%" }}
       ></div>
-      <div className="hero-content text-center mt-12 mb-16 bg-base-200 rounded-3xl p-12 shadow-xl">
+      <div className="hero-content text-center mt-24 mb-16 bg-base-200 rounded-3xl p-12 shadow-xl">
         <div className="flex flex-col items-center">
           <h1 className="text-2xl font-bold">Script generator</h1>
           <div className="stats shadow mt-4">
@@ -50,10 +73,15 @@ export default function ({ save, setNext }) {
               <div className="stat-desc mt-2">scripts in the last 24 hours</div>
             </div>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col">
+
+            <h1 className="text-base-content opacity-70 text-sm font-medium text-left mb-2 ml-2">
+                Abstract
+            </h1>
+
             <TextArea
               onChange={(e) => {
-                save(e);
+                saveAbstract(e);
                 setAbstract(e.target.value);
               }}
               value={abstract}
@@ -61,6 +89,26 @@ export default function ({ save, setNext }) {
               cols={60}
               placeholder={"Enter abstract..."}
             />
+
+            <br />
+
+
+            <h1 className="text-base-content opacity-70 text-sm font-medium text-left mb-2 ml-2">
+              Genre
+            </h1>
+
+            <TextArea
+              onChange={(e) => {
+                saveGenre(e);
+                setGenre(e.target.value);
+              }}
+              value={genre}
+              rows={2}
+              cols={60}
+              placeholder={"Enter Genre..."}
+            />
+
+
           </div>
           <button
             className="btn btn-primary w-full btn-md relative mt-4"
