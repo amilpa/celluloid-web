@@ -61,11 +61,12 @@ export default function () {
         <div className="bg-base-content bg-opacity-40 h-[1px] w-full"></div>
       </div>
       <div className="px-28 mt-16">
-        <div className="grid place-items-center grid-cols-4">
+        <div className="grid place-items-center grid-cols-5">
           <PhaseCard title={"Character Setup"} phase={"character"} id={"id"} />
-          <PhaseCard title={"Act I"} />
-          <PhaseCard title={"Act II"} />
-          <PhaseCard title={"Act III"} />
+          <PhaseCard title={"Act I"} phase={"act1"} id={"id"} />
+          <PhaseCard title={"Act II"} phase={"act2"} id={"id"}/>
+          <PhaseCard title={"Act III"} phase={"act3"} id={"id"}/>
+          <PhaseCard title={"Outline"} phase={"outline"} id={"id"}/>
         </div>
       </div>
     </div>

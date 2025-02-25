@@ -5,7 +5,7 @@ export default function PhaseCard({ title, icon, id, phase }) {
 
   return (
     <div
-      onClick={() => navigate("/editor?phase=" + phase + "&id=" + id)}
+      onClick={() => navigate("/editor?phase=" + phase + "&id=" + id,{state:{phase:phase,title:title}})}
       className="card bg-neutral relative shadow-lg w-[300px] h-[200px] flex flex-row justify-center items-center cursor-pointer border border-transparent transition-all hover:border-success"
     >
       <div className="scale-75 absolute left-14">{icon}</div>
